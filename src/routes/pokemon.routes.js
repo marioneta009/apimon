@@ -2,6 +2,7 @@ import { Router } from "express"
 import axios from "axios"
 import { PrismaClient} from '@prisma/client';
 import NodeCache from 'node-cache';
+import authenticateToken from '../midlewareAuth.js';
 
 
 const prisma = new PrismaClient()
@@ -61,7 +62,7 @@ router.get("/:name", async (req, res) => {
     }
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authenticateToken, async (req, res) => {
     const id = parseInt(req.params.id);
     try {
         const pokemon = await prisma.pokemon.delete({
@@ -77,7 +78,7 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
-router.delete("/free/:name", async (req, res) => {
+router.delete("/free/:name", authenticateToken, async (req, res) => {
     const name = (req.params.name).toLowerCase();
     try {
         const pokemon = await prisma.pokemon.delete({
@@ -93,7 +94,7 @@ router.delete("/free/:name", async (req, res) => {
     }
 });
 
-router.delete("/type/:type", async (req, res) => {
+router.delete("/type/:type", authenticateToken, async (req, res) => {
     const type = (req.params.type).toLowerCase();
     try {
         const result = await prisma.pokemon.deleteMany({
