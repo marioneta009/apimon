@@ -1,13 +1,28 @@
 import { Router } from "express"
 import axios from "axios"
 import { PrismaClient} from '@prisma/client';
+import NodeCache from 'node-cache';
+
 
 const prisma = new PrismaClient()
 const router = Router()
+const myCache = new NodeCache({ stdTTL: 100, checkperiod: 10 });
 
 router.get("/", async (req, res) => {
-    const list= await prisma.pokemon.findMany()
-    res.json(list)
+    const key = 'pokemonList';
+    const value = myCache.get(key);
+    if (value != undefined) {
+        res.json(value);
+    } else {
+        try {
+            const list = await prisma.pokemon.findMany();
+            myCache.set(key, list);
+            res.json(list);
+        } catch (error) {
+            console.error('Prisma error:', error);
+            res.status(500).json({ error: 'Error retrieving the pokemons from the database' });
+        }
+    }
 })
 
 router.get("/:name", async (req, res) => {
