@@ -71,9 +71,8 @@ Para comenzar a utilizar este proyecto, sigue estos pasos:
    ```bash
    npm install
    ```
-
-   > [!WARNING]
-   > Es necesario considerar que las dependencias toman aproximadamente 3 minutos en ser cargadas, dependiendo de su conexión a internet, esto debido a la naturaleza de dependencias como _**Artillery**_, la cuál es bastante pesada en custión de tamaño de almacenamiento.
+> [!WARNING]
+> Es necesario considerar que las dependencias toman aproximadamente 3 minutos en ser cargadas, dependiendo de su conexión a internet, esto debido a la naturaleza de dependencias como _**Artillery**_, la cuál es bastante pesada en custión de tamaño de almacenamiento.
 
 1. **Ejecutar la aplicación Node.js:**
    Una vez que las dependencias se hayan instalado correctamente, puedes ejecutar la aplicación Node.js. Utiliza uno de los dos comandos siguientes para iniciar la aplicación en el puerto 3000.
@@ -218,13 +217,13 @@ La arquitectura de la aplicación sigue el patrón single router, que facilita e
 
 - **Seguridad**:
 Se han implementado medidas de seguridad para proteger la API contra posibles amenazas y ataques. Esto incluye la validación de datos de entrada, la gestión adecuada de tokens de autenticación
-   > [!IMPORTANT]
-   > Dado la simplicidad del proyecto solo se usa un Bearer Token, el cual se deja por defecto: **_2014-token-string_**
+> [!IMPORTANT]
+> Dado la simplicidad del proyecto solo se usa un Bearer Token, el cual se deja por defecto: **_2014-token-string_**
 
    También se hace uso de cache para aumentar la eficiencia de la aplicación
 
-   > [!TIP]
-   > En el caso del cache se reserva solo 10 segundos de duración para permitir hacer pruebas, en caso de manejarse en un despliegue real se recomienda moodificar este parametro.
+> [!TIP]
+> En el caso del cache se reserva solo 10 segundos de duración para permitir hacer pruebas, en caso de manejarse en un despliegue real se recomienda moodificar este parametro.
 
 - **Documentación Avanzada**:
 La documentación de la API se ha elaborado de manera exhaustiva, incluyendo información detallada sobre la arquitectura de la aplicación, decisiones de diseño, así como documentación de código para explicar partes específicas del código que puedan no ser autoexplicativas. Esta documentación se presenta de manera clara y accesible en el archivo README, asegurando que los desarrolladores puedan comprender y colaborar con el proyecto de manera efectiva.
@@ -238,6 +237,13 @@ El código de la aplicación está acompañado de pruebas unitarias exhaustivas 
 - **Código Limpio**:
 El código de la aplicación se adhiere a las mejores prácticas de codificación y está estructurado de manera clara y legible. Se han seguido convenciones de nomenclatura consistentes y se han evitado patrones de código antipáticos. Además, se ha hecho un esfuerzo por mantener el código bien comentado y documentado, facilitando su comprensión y mantenimiento por parte de otros desarrolladores.
 
+- **Monitoreo**:
+Aunque en la aplicación no se implemento un marco de monitoreo, se recomiendan las siguientes herramientas para este propósito:
+
+  - **Winston**:
+Biblioteca de logging versátil y potente para Node.js. Permite registrar mensajes de registro en varios niveles de severidad. Gestiona múltiples transportes (consola, archivos, bases de datos, etc.). Personaliza fácilmente el formato de registro. Compatible con la agregación de registros y se integra fácilmente con herramientas de monitoreo de terceros. Ampliamente utilizado y bien documentado.
+  - **Pino**: Alternativa moderna y de alto rendimiento a Winston. Diseñado para ser extremadamente rápido y eficiente en el uso de recursos. Admite múltiples niveles de registro y personalización del formato de registro.Compatible con herramientas de agregación y monitoreo de logs, como Elasticsearch, Logstash y Kibana (ELK stack). Ideal para aplicaciones con altos requisitos de rendimiento y escalabilidad.
+
 ## Autor ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
@@ -246,7 +252,7 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](docs/LICENSE.md) para detalles
+Este proyecto está bajo la Licencia ISC - mira el archivo [LICENSE.md](docs/LICENSE.md) para detalles
 
 ---
 ⌨️ con ❤️ por [José Martin Gutiérrez Arriaga](https://github.com/marioneta009) 😊

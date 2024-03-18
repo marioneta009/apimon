@@ -10,7 +10,7 @@
     "test": "mocha src/test/*.test.js",
     "load-test": "artillery run src/test/load_test.yml"
   },
-  "keywords": [],
+  "keywords": [ "api", "pokemon", "SQLite3" ],
   "author": "Jose Martin Gutierrez Arriaga",
   "license": "ISC",
   "devDependencies": {
