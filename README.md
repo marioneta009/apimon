@@ -162,7 +162,7 @@ El sistema cuenta con algunas pruebas para garantizar el funcionamiento de la ap
 Para realizar las pruebas unitarias, desde tu terminal, estando ubicado en la raíz del proyecto, debes de ejecutar lo siguiente:
 
 ```bash
-   npm test
+   npm run test
 ```
 Con dicho comando se desplegarar una prueba de inserción de un nuevo pokemon, listado de datos y la eliminación del mismo pokemon
 > [!CAUTION]
@@ -173,7 +173,7 @@ Tambien tenemos pruebas de carga, estas se ejecutan de la siguiente manera, perm
 Para realizar las pruebas unitarias, desde tu terminal debes de ejecutar lo siguiente:
 
 ```bash
-   npm load-test
+   npm run load-test
 ```
 
 ## Docker 📦
