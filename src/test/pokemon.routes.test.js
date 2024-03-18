@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 describe('GET /:name', () => {
     it('should retrieve and save a pokemon by name', (done) => {
-        const name = 'ponyta'; // Replace with the name of the Pokemon you want to retrieve and save
+        const name = 'cherrim'; // Replace with the name of the Pokemon you want to retrieve and save
         request(app)
             .get(`/${name}`)
             .expect(200)
@@ -33,9 +33,10 @@ describe('GET /', () => {
 
 describe('DELETE /free/:name', () => {
     it('should delete a pokemon by name', (done) => {
-        const name = 'ponyta'; // Replace with the name of the Pokemon you want to delete
+        const name = 'cherrim'; // Replace with the name of the Pokemon you want to delete
         request(app)
             .delete(`/free/${name}`)
+            .set('Authorization', `Bearer 2024-token-string`) 
             .expect(200)
             .end((err, res) => {
                 if (err) return done(err);

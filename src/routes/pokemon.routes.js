@@ -7,7 +7,7 @@ import authenticateToken from '../midlewareAuth.js';
 
 const prisma = new PrismaClient()
 const router = Router()
-const myCache = new NodeCache({ stdTTL: 100, checkperiod: 10 });
+const myCache = new NodeCache({ stdTTL: 10, checkperiod: 120 });
 
 router.get("/", async (req, res) => {
     const key = 'pokemonList';
